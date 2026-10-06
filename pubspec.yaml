@@ -1,0 +1,44 @@
+name: kalkumi
+description: An offline math quiz built for an Android developer technical test.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_screenutil: ^5.9.3
+  go_router: ^17.0.0
+  provider: ^6.1.5+1
+  shadcn_ui: ^0.53.6
+  shared_preferences: ^2.5.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.14.4
+  flutter_lints: ^6.0.0
+  flutter_native_splash: ^2.4.7
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/kalkumi/
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: assets/kalkumi/app_icon.png
+  adaptive_icon_background: '#1769E0'
+  adaptive_icon_foreground: assets/kalkumi/app_icon.png
+  min_sdk_android: 21
+
+flutter_native_splash:
+  color: '#F7FAFF'
+  android: true
+  ios: false
+  fullscreen: false
+  android_12:
+    color: '#F7FAFF'
