@@ -5,6 +5,7 @@ import 'package:kalkumi/app/app_routes.dart';
 import 'package:kalkumi/core/theme/app_theme.dart';
 import 'package:kalkumi/features/quiz/domain/quiz_difficulty.dart';
 import 'package:kalkumi/features/quiz/domain/quiz_history_entry.dart';
+import 'package:kalkumi/core/extensions/date_time_ext.dart';
 import 'package:kalkumi/features/quiz/presentation/widgets/difficulty_badge.dart';
 import 'package:kalkumi/resources/layout_app.dart';
 import 'package:kalkumi/resources/strings_app.dart';
@@ -98,7 +99,7 @@ class HistoryTile extends StatelessWidget {
                     ),
                     SizedBox(height: 4.h),
                     Text(
-                      formatQuizDate(entry.completedAt),
+                      entry.completedAt.toFormattedString(shortMonth: true),
                       style: TextStyle(
                         color: AppColors.muted,
                         fontSize: 11.sp.clamp(10.0, 13.0),
@@ -150,24 +151,4 @@ class HistoryTile extends StatelessWidget {
       ),
     );
   }
-}
-
-String formatQuizDate(DateTime value) {
-  const months = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'Mei',
-    'Jun',
-    'Jul',
-    'Agu',
-    'Sep',
-    'Okt',
-    'Nov',
-    'Des',
-  ];
-  final local = value.toLocal();
-  final minute = local.minute.toString().padLeft(2, '0');
-  return '${local.day} ${months[local.month - 1]} ${local.year} • ${local.hour}:$minute';
 }

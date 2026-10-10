@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kalkumi/core/theme/app_theme.dart';
 import 'package:kalkumi/core/theme/kalkumi_assets.dart';
+import 'package:kalkumi/core/extensions/date_time_ext.dart';
+import 'package:kalkumi/core/extensions/score_ext.dart';
 import 'package:kalkumi/features/quiz/domain/quiz_history_entry.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
@@ -75,7 +77,7 @@ class HistoryResultHero extends StatelessWidget {
                   fit: BoxFit.scaleDown,
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    historyHeadline(entry.accuracy),
+                    entry.accuracy.toHistoryHeadline(),
                     maxLines: 1,
                     style: TextStyle(
                       color: Colors.white,
@@ -86,7 +88,7 @@ class HistoryResultHero extends StatelessWidget {
                 ),
                 SizedBox(height: 5.h),
                 Text(
-                  formatHistoryDate(entry.completedAt),
+                  entry.completedAt.toFormattedString(),
                   style: TextStyle(
                     color: Colors.white.withValues(alpha: .8),
                     fontSize: 11.sp.clamp(10.0, 13.0),
@@ -132,31 +134,4 @@ class HistoryResultHero extends StatelessWidget {
       ),
     );
   }
-}
-
-String historyHeadline(int accuracy) {
-  if (accuracy >= 90) return 'Math superstar!';
-  if (accuracy >= 70) return 'Ritmemu keren!';
-  if (accuracy >= 50) return 'Makin kuat!';
-  return 'Terus berlatih!';
-}
-
-String formatHistoryDate(DateTime value) {
-  const months = [
-    'Januari',
-    'Februari',
-    'Maret',
-    'April',
-    'Mei',
-    'Juni',
-    'Juli',
-    'Agustus',
-    'September',
-    'Oktober',
-    'November',
-    'Desember',
-  ];
-  final local = value.toLocal();
-  final minute = local.minute.toString().padLeft(2, '0');
-  return '${local.day} ${months[local.month - 1]} ${local.year} • ${local.hour}:$minute';
 }

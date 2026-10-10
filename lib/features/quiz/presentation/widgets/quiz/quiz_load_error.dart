@@ -34,7 +34,7 @@ class QuizLoadError extends StatelessWidget {
           SizedBox(height: 18.h),
           ShadAlert.destructive(
             icon: const Icon(LucideIcons.fileQuestionMark),
-            title: const Text('Soal belum siap'),
+            title: const Text(AppStrings.quizLoadErrorTitle),
             description: Text(controller.loadError ?? 'Data soal tidak valid.'),
           ),
           SizedBox(height: 18.h),
@@ -48,7 +48,7 @@ class QuizLoadError extends StatelessWidget {
           ShadButton.outline(
             height: AppLayout.buttonHeight,
             onPressed: () => context.pop(),
-            child: const Text('Kembali Pilih Level'),
+            child: const Text(AppStrings.backToChooseLevel),
           ),
         ],
       ),

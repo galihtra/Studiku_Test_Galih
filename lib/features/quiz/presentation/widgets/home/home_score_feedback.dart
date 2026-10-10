@@ -19,7 +19,7 @@ class HomeScoreFeedback extends StatelessWidget {
             child: const ShadProgress(
               minHeight: 5,
               color: AppColors.blue,
-              semanticsLabel: 'Memuat best score',
+              semanticsLabel: AppStrings.loadingBestScore,
             ),
           );
         }
@@ -28,7 +28,7 @@ class HomeScoreFeedback extends StatelessWidget {
           padding: EdgeInsets.only(top: 14.h),
           child: ShadAlert.destructive(
             icon: const Icon(LucideIcons.databaseZap),
-            title: const Text('Data skor tidak tampil'),
+            title: const Text(AppStrings.scoreLoadErrorTitle),
             description: Text(scoreboard.errorMessage ?? 'Terjadi kesalahan.'),
             bottom: Align(
               alignment: Alignment.centerLeft,

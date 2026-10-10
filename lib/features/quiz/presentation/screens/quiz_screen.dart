@@ -11,6 +11,7 @@ import 'package:kalkumi/features/quiz/logic/quiz_session_controller.dart';
 import 'package:kalkumi/features/quiz/logic/scoreboard_controller.dart';
 import 'package:kalkumi/features/quiz/presentation/widgets/quiz/quiz_content.dart';
 import 'package:kalkumi/features/quiz/presentation/widgets/quiz/quiz_load_error.dart';
+import 'package:kalkumi/resources/strings_app.dart';
 import 'package:provider/provider.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
@@ -30,18 +31,16 @@ class _QuizScreenState extends State<QuizScreen> {
     final shouldExit = await showShadDialog<bool>(
       context: context,
       builder: (dialogContext) => ShadDialog.alert(
-        title: const Text('Keluar dari permainan?'),
-        description: const Text(
-          'Progress sesi ini belum selesai dan tidak akan disimpan.',
-        ),
+        title: const Text(AppStrings.quizExitTitle),
+        description: const Text(AppStrings.quizExitBody),
         actions: [
           ShadButton.outline(
             onPressed: () => Navigator.pop(dialogContext, false),
-            child: const Text('Lanjut bermain'),
+            child: const Text(AppStrings.quizExitCancel),
           ),
           ShadButton.destructive(
             onPressed: () => Navigator.pop(dialogContext, true),
-            child: const Text('Keluar'),
+            child: const Text(AppStrings.quizExitConfirm),
           ),
         ],
       ),

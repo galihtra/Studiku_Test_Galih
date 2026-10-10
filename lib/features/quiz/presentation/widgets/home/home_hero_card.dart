@@ -72,7 +72,7 @@ class HomeHeroCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'HEY, MATH HERO! 👋',
+                      AppStrings.homeHeroGreeting,
                       style: TextStyle(
                         color: Colors.white.withValues(alpha: .82),
                         fontSize: 11.sp.clamp(10.0, 13.0),

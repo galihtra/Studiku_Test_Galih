@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kalkumi/core/theme/app_theme.dart';
 import 'package:kalkumi/core/theme/kalkumi_assets.dart';
 import 'package:kalkumi/core/theme/kalkumi_widgets.dart';
+import 'package:kalkumi/resources/strings_app.dart';
 
 class HistoryRecordBanner extends StatelessWidget {
   const HistoryRecordBanner({super.key});
@@ -17,7 +18,7 @@ class HistoryRecordBanner extends StatelessWidget {
           SizedBox(width: 12.w),
           Expanded(
             child: Text(
-              'Sesi ini mencetak rekor baru!',
+              AppStrings.historyRecordBannerMessage,
               style: TextStyle(
                 color: AppColors.deepNavy,
                 fontSize: 14.sp.clamp(13.0, 16.0),

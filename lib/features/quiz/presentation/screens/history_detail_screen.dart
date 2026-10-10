@@ -5,6 +5,7 @@ import 'package:kalkumi/features/quiz/logic/quiz_history_controller.dart';
 import 'package:kalkumi/features/quiz/presentation/widgets/history/history_load_failure.dart';
 import 'package:kalkumi/features/quiz/presentation/widgets/history/history_not_found.dart';
 import 'package:kalkumi/features/quiz/presentation/widgets/history/history_result_view.dart';
+import 'package:kalkumi/resources/strings_app.dart';
 import 'package:provider/provider.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
@@ -18,7 +19,7 @@ class HistoryDetailScreen extends StatelessWidget {
     final history = context.watch<QuizHistoryController>();
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBar(title: const Text('Detail Hasil'), centerTitle: true),
+      appBar: AppBar(title: const Text(AppStrings.historyDetailAppBarTitle), centerTitle: true),
       body: KalkumiBackdrop(
         child: SafeArea(
           child: Builder(

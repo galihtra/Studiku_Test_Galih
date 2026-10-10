@@ -45,23 +45,21 @@ class DifficultyScreen extends StatelessWidget {
                     const ShadProgress(
                       minHeight: 5,
                       color: AppColors.blue,
-                      semanticsLabel: 'Memuat best score',
+                      semanticsLabel: AppStrings.loadingBestScore,
                     ),
                   ],
                   if (scoreboard.hasError) ...[
                     SizedBox(height: 16.h),
                     ShadAlert.destructive(
                       icon: const Icon(LucideIcons.databaseZap),
-                      title: const Text('Best score tidak tersedia'),
-                      description: const Text(
-                        'Kamu tetap dapat bermain. Data lokal bisa dicoba lagi.',
-                      ),
+                      title: const Text(AppStrings.bestScoreErrorTitle),
+                      description: const Text(AppStrings.bestScoreErrorBody),
                       bottom: Align(
                         alignment: Alignment.centerLeft,
                         child: ShadButton.outline(
                           size: ShadButtonSize.sm,
                           onPressed: scoreboard.load,
-                          child: const Text('Muat ulang'),
+                          child: const Text(AppStrings.reload),
                         ),
                       ),
                     ),
@@ -73,7 +71,7 @@ class DifficultyScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 4.h),
                   Text(
-                    'Setiap level punya aturan generator yang berbeda.',
+                    AppStrings.difficultyHeroDescription,
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                   SizedBox(height: 15.h),
@@ -103,7 +101,7 @@ class DifficultyScreen extends StatelessWidget {
                         SizedBox(width: 12.w),
                         Expanded(
                           child: Text(
-                            'Setiap sesi berisi 10 soal baru dan hanya satu jawaban yang benar.',
+                            AppStrings.difficultyInfo,
                             style: TextStyle(
                               color: AppColors.navy,
                               fontSize: 13.sp.clamp(12.0, 15.0),

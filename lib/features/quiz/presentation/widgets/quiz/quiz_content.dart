@@ -161,10 +161,10 @@ class QuizContent extends StatelessWidget {
           KalkumiPrimaryButton(
             keyValue: const Key('next_question_button'),
             label: isFinishing
-                ? 'Menyimpan hasil...'
+                ? AppStrings.savingResult
                 : controller.isLastQuestion
-                ? 'Lihat Hasil'
-                : 'Soal Berikutnya',
+                ? AppStrings.viewResult
+                : AppStrings.nextQuestion,
             icon: controller.isLastQuestion
                 ? LucideIcons.flag
                 : LucideIcons.arrowRight,

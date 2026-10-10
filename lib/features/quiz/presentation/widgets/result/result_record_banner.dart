@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kalkumi/core/theme/app_theme.dart';
 import 'package:kalkumi/core/theme/kalkumi_assets.dart';
+import 'package:kalkumi/resources/strings_app.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 class ResultRecordBanner extends StatelessWidget {
@@ -27,7 +28,7 @@ class ResultRecordBanner extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'REKOR BARU!',
+                  AppStrings.resultRecordBannerTitle,
                   style: TextStyle(
                     color: AppColors.deepNavy,
                     fontSize: 12.sp.clamp(11.0, 14.0),
@@ -37,7 +38,7 @@ class ResultRecordBanner extends StatelessWidget {
                 ),
                 SizedBox(height: 2.h),
                 Text(
-                  'Best score-mu baru saja naik. Keren!',
+                  AppStrings.resultRecordBannerBody,
                   style: TextStyle(
                     color: AppColors.muted,
                     fontSize: 12.sp.clamp(11.0, 14.0),

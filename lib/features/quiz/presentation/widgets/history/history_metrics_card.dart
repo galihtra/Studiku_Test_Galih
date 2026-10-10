@@ -5,6 +5,7 @@ import 'package:kalkumi/features/quiz/domain/quiz_difficulty.dart';
 import 'package:kalkumi/features/quiz/domain/quiz_history_entry.dart';
 import 'package:kalkumi/features/quiz/presentation/widgets/history/history_metric_item.dart';
 import 'package:kalkumi/features/quiz/presentation/widgets/metric_divider.dart';
+import 'package:kalkumi/resources/strings_app.dart';
 
 class HistoryMetricsCard extends StatelessWidget {
   const HistoryMetricsCard({
@@ -30,7 +31,7 @@ class HistoryMetricsCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'RINGKASAN SESI',
+            AppStrings.sessionSummaryLabel,
             style: TextStyle(
               color: AppColors.navy,
               fontSize: 11.sp.clamp(10.0, 13.0),
@@ -82,7 +83,7 @@ class HistoryMetricsCard extends StatelessWidget {
                     ),
                     SizedBox(height: 4.h),
                     Text(
-                      'Akurasi jawaban pada sesi ini',
+                      AppStrings.accuracySessionLabel,
                       style: TextStyle(
                         color: AppColors.muted,
                         fontSize: 13.sp.clamp(12.0, 15.0),
@@ -101,7 +102,7 @@ class HistoryMetricsCard extends StatelessWidget {
               Expanded(
                 child: HistoryMetricItem(
                   value: '${entry.score}',
-                  label: 'Benar',
+                  label: AppStrings.correctLabel,
                   color: AppColors.success,
                 ),
               ),
@@ -109,7 +110,7 @@ class HistoryMetricsCard extends StatelessWidget {
               Expanded(
                 child: HistoryMetricItem(
                   value: '${entry.incorrectAnswers}',
-                  label: 'Salah',
+                  label: AppStrings.incorrectLabel,
                   color: AppColors.danger,
                 ),
               ),
@@ -117,7 +118,7 @@ class HistoryMetricsCard extends StatelessWidget {
               Expanded(
                 child: HistoryMetricItem(
                   value: '${entry.bestScore}',
-                  label: 'Terbaik',
+                  label: AppStrings.bestLabel,
                   color: AppColors.blue,
                 ),
               ),

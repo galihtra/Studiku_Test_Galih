@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kalkumi/core/theme/app_theme.dart';
 import 'package:kalkumi/features/quiz/presentation/widgets/metric_divider.dart';
 import 'package:kalkumi/features/quiz/presentation/widgets/result/result_metric_item.dart';
+import 'package:kalkumi/resources/strings_app.dart';
 import 'package:kalkumi/resources/values_app.dart';
 
 class ResultPerformanceCard extends StatelessWidget {
@@ -32,7 +33,7 @@ class ResultPerformanceCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'HASIL SESIMU',
+            AppStrings.resultPerformanceLabel,
             style: TextStyle(
               color: AppColors.navy,
               fontSize: 11.sp.clamp(10.0, 13.0),
@@ -76,10 +77,10 @@ class ResultPerformanceCard extends StatelessWidget {
                   children: [
                     Text(
                       score >= 8
-                          ? 'Fokus luar biasa!'
+                          ? AppStrings.resultFeedbackHigh
                           : score >= 5
-                          ? 'Terus bangun ritme!'
-                          : 'Ayo coba lagi!',
+                          ? AppStrings.resultFeedbackMed
+                          : AppStrings.resultFeedbackLow,
                       style: TextStyle(
                         color: AppColors.navy,
                         fontSize: 18.sp.clamp(16.0, 21.0),
@@ -88,7 +89,7 @@ class ResultPerformanceCard extends StatelessWidget {
                     ),
                     SizedBox(height: 3.h),
                     const Text(
-                      'Akurasi jawaban',
+                      AppStrings.accuracyLabel,
                       style: TextStyle(color: AppColors.muted),
                     ),
                   ],
@@ -104,7 +105,7 @@ class ResultPerformanceCard extends StatelessWidget {
               Expanded(
                 child: ResultMetricItem(
                   value: '$score',
-                  label: 'Benar',
+                  label: AppStrings.correctLabel,
                   color: AppColors.success,
                 ),
               ),
@@ -112,7 +113,7 @@ class ResultPerformanceCard extends StatelessWidget {
               Expanded(
                 child: ResultMetricItem(
                   value: '${AppValues.questionsPerSession - score}',
-                  label: 'Salah',
+                  label: AppStrings.incorrectLabel,
                   color: AppColors.danger,
                 ),
               ),
@@ -120,7 +121,7 @@ class ResultPerformanceCard extends StatelessWidget {
               Expanded(
                 child: ResultMetricItem(
                   value: '$bestScore',
-                  label: 'Terbaik',
+                  label: AppStrings.bestLabel,
                   color: AppColors.blue,
                 ),
               ),

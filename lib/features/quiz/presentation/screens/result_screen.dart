@@ -90,7 +90,7 @@ class _ResultScreenState extends State<ResultScreen> {
                           Row(
                             children: [
                               Text(
-                                'HASIL PETUALANGAN',
+                                AppStrings.resultTitle,
                                 style: TextStyle(
                                   color: AppColors.muted,
                                   fontSize: 11.sp.clamp(10.0, 13.0),
@@ -111,7 +111,7 @@ class _ResultScreenState extends State<ResultScreen> {
                             ShadAlert.destructive(
                               key: const Key('persistence_error'),
                               icon: const Icon(LucideIcons.saveOff),
-                              title: const Text('Hasil belum tersimpan'),
+                              title: const Text(AppStrings.resultNotSavedTitle),
                               description: const Text(
                                 AppStrings.localStorageError,
                               ),

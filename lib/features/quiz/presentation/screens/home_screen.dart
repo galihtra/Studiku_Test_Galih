@@ -38,8 +38,8 @@ class HomeScreen extends StatelessWidget {
                   const HomeScoreFeedback(),
                   SizedBox(height: AppLayout.sectionGap),
                   const HomeSectionHeader(
-                    title: 'Perjalananmu',
-                    subtitle: 'Sedikit latihan, makin kuat setiap hari',
+                    title: AppStrings.journeyTitle,
+                    subtitle: AppStrings.journeySubtitle,
                   ),
                   SizedBox(height: 12.h),
                   const HomeScoreStats(),
